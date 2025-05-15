@@ -8,9 +8,73 @@
 <body>
     <script>
         
-        console.log("Hello World")
+        let humanScore = 0;
+        let computerScore = 0;
 
+        function getComputerChoice()
+        {
+            let randomVal = Math.random() * 3;
+            let choice;
+            if (randomVal === 0)
+            {
+                choice = "Rock";
+            }else if(randomVal === 1)
+            {
+                choice = "Paper";
+            }else if(randomVal === 2)
+            {
+                choice = "Scissors";
+            }
+            return choice.toLowerCase();
+        }
 
+        function getHumanChoice()
+        {
+            let userChoice;
+            while(1){
+                userChoice = prompt("Enter your choice", "Rock, Paper or Scissors");
+                if (userChoice != "Rock" || userChoice != "Paper" || userChoice != "Scissors" )
+                {
+                    alert("Invalid choice");
+                }else
+                {
+                    console.log(userChoice);
+                    return userChoice;
+                }
+            }
+        }
+
+        function playRound(humanChoice, computerChoice)
+        {
+            if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper")
+            {
+                computerScore++;
+                console.log("You lose!Paper beats Rock");
+            }else if (humanChoice.toLowerCase() === "paper" && computerChoice === "rock")
+            {
+                humanScore++;
+                console.log("You win!Paper beats Rock");
+            }else if (humanChoice.toLowerCase() === "scissors" && computerChoice === "rock")
+            {
+                computerScore++;
+                console.log("You lose!Rock beats Scissors");
+            }else if (humanChoice.toLowerCase() === "rock" && computerChoice === "scissors")
+            {
+                humanScore++;
+                console.log("You win!Rock beats Scissors");
+            }else if (humanChoice.toLowerCase() === "scissors" && computerChoice === "paper")
+            {
+                humanScore++;
+                console.log("You win!Scissors beats Paper");
+            }else if (humanChoice.toLowerCase() === "paper" && computerChoice === "scissors")
+            {
+                computerScore++;
+                console.log("You lose!Scissors beats paper");
+            }else if (humanChoice.toLowerCase() === computerChoice)
+            {
+                control.log("Tie!");
+            }
+        }
 
 
     </script>
