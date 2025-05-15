@@ -8,8 +8,7 @@
 <body>
     <script>
         
-        let humanScore = 0;
-        let computerScore = 0;
+
 
         function getComputerChoice()
         {
@@ -44,7 +43,15 @@
             }
         }
 
-        function playRound(humanChoice, computerChoice)
+        
+
+        function playGame () 
+        {
+            
+            let humanScore = 0;
+            let computerScore = 0;
+
+            function playRound(humanChoice, computerChoice)
         {
             if (humanChoice.toLowerCase() === "rock" && computerChoice === "paper")
             {
@@ -75,12 +82,9 @@
                 control.log("Tie!");
             }
         }
-
-        function playGame () 
-        {
             for (let i = 0; i <= 5; i++)
              {
-                playRound()
+                playRound();
                 console.log("Current score: ", "Human: ", humanScore, "Computer: ", computerScore);
             }
             if (humanScore > computerScore)
