@@ -76,6 +76,23 @@
             }
         }
 
+        function playGame () 
+        {
+            for (let i = 0; i <= 5; i++)
+             {
+                playRound()
+                console.log("Current score: ", "Human: ", humanScore, "Computer: ", computerScore);
+            }
+            if (humanScore > computerScore)
+            {
+                console.log("You are the winner!");
+            }else
+            {
+                console.log("Computer won.");
+            }
+
+        }
+
 
     </script>
 </body>
