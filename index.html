@@ -9,10 +9,10 @@
     <script>
         
 
-
         function getComputerChoice()
         {
-            let randomVal = Math.random() * 3;
+            let randomVal = Math.floor(Math.random() * 3);
+
             let choice;
             if (randomVal === 0)
             {
@@ -32,7 +32,8 @@
             let userChoice;
             while(1){
                 userChoice = prompt("Enter your choice", "Rock, Paper or Scissors");
-                if (userChoice != "Rock" || userChoice != "Paper" || userChoice != "Scissors" )
+                let validChoices = ["rock", "paper", "scissors"];
+                if (!validChoices.includes(userChoice.toLowerCase()))
                 {
                     alert("Invalid choice");
                 }else
@@ -79,12 +80,15 @@
                 console.log("You lose!Scissors beats paper");
             }else if (humanChoice.toLowerCase() === computerChoice)
             {
-                control.log("Tie!");
+                console.log("Tie!");
             }
         }
             for (let i = 0; i <= 5; i++)
              {
-                playRound();
+                let humanChoice = getHumanChoice();
+                let computerChoice = getComputerChoice();
+                playRound(humanChoice, computerChoice);
+
                 console.log("Current score: ", "Human: ", humanScore, "Computer: ", computerScore);
             }
             if (humanScore > computerScore)
@@ -97,6 +101,7 @@
 
         }
 
+        playGame();
 
     </script>
 </body>
